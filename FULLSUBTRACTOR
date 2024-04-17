@@ -1,0 +1,12 @@
+module fs(a,b,bin,diff,borrow);
+    input a,b,bin;
+    output diff,borrow;
+    wire w1,w2,w3,w4,w5;
+    xor g1(w3,a,b);
+    xor g2(diff,bin,w3);
+    and g3(w2,b,w1);
+    and g4(w5,w4,bin);
+    not g5(w1,a);
+    not g6(w4,w3);
+    nor g7(borrow,w5,w2);
+endmodule  
